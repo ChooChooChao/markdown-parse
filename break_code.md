@@ -1,6 +1,6 @@
 # Title
 
-[(this is) a link!](https://something.com/(randomstuff))
+[(this is will) a link!](https://something.com/(randomstuff))
 
 *Hello this is come random writing*
 
