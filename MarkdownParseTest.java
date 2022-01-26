@@ -24,4 +24,24 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         assertEquals(expected, MarkdownParse.getLinks(contents));
     }
+
+    @Test
+    public void getLinksTwo() throws IOException {
+        ArrayList<String> expected = new ArrayList<String>(); 
+        expected.add("https://something.com/(randomstuff");
+        expected.add("some-page.html[what-if-brackets]");
+
+        Path fileName = Path.of("break_code.md");
+	    String contents = Files.readString(fileName);
+        assertEquals(expected, MarkdownParse.getLinks(contents));
+    }
+
+    @Test
+    public void getLinksThree() throws IOException {
+        ArrayList<String> expected = new ArrayList<String>(); 
+
+        Path fileName = Path.of("noLinks.md");
+	    String contents = Files.readString(fileName);
+        assertEquals(expected, MarkdownParse.getLinks(contents));
+    }
 }
