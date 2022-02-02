@@ -20,7 +20,7 @@ public class MarkdownParseTest {
         expected.add("https://something.com");
         expected.add("some-page.html");
 
-        Path fileName = Path.of("test-file.md");
+        Path fileName = Path.of("test-file-own.md");
 	    String contents = Files.readString(fileName);
         assertEquals(expected, MarkdownParse.getLinks(contents));
     }
@@ -35,12 +35,23 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         assertEquals(expected, MarkdownParse.getLinks(contents));
     }
-
+    
     @Test
     public void getLinksThree() throws IOException {
         ArrayList<String> expected = new ArrayList<String>(); 
 
         Path fileName = Path.of("noLinks.md");
+	    String contents = Files.readString(fileName);
+        assertEquals(expected, MarkdownParse.getLinks(contents));
+    }
+
+    @Test
+    public void test1() throws IOException {
+        ArrayList<String> expected = new ArrayList<String>(); 
+        expected.add("https://something.com");
+        expected.add("some-page.html");
+
+        Path fileName = Path.of("test-file.md");
 	    String contents = Files.readString(fileName);
         assertEquals(expected, MarkdownParse.getLinks(contents));
     }
